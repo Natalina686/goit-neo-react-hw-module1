@@ -1,9 +1,15 @@
 import Profile from "./components/Profile/Profile";
+import FriendList from "./components/FriendList/FriendList";
+import TransactionHistory from "./components/TransactionHistory/TransactionHistory";
+
+import friends from "./data/friends.json";
 import user from "./data/user.json";
+import transactons from "./data/transactions.json";
+
 
 function App() {
   return (
-    <div>
+    <>
       <Profile
       name={user.name}
       tag={user.tag}
@@ -11,7 +17,9 @@ function App() {
       image={user.avatar}
       stats={user.stats}
       />
-    </div>
+      <FriendList friends={friends} />
+      <TransactionHistory items={transactons} />
+    </>
   );
 };
 
